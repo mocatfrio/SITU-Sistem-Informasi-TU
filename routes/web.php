@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware'=>'check'],function() {
+	Route::get('/logged','LoginController@latest');
+	Route::get('/keperluansurat','KeperluanSuratController@index');
+	Route::get('/logout','MahasiswaController@logout');
 });
+
+Route::group(['middleware'=>'logged'],function() {
+	Route::get('/', function () {
+	    return view('login');
+	});
+	Route::get('/register', function () {
+	    return view('register');
+	});
+});
+
+Route::post('mhsaction','MahasiswaController@store');
+Route::post('login','MahasiswaController@login');
