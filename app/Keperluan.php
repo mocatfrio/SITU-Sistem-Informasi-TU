@@ -8,7 +8,7 @@ class Keperluan extends Model
 {
     protected $table='keperluan_surat';
 	protected $primaryKey='id';
-	public $timestamp = true;
+	public $timestamps = true;
 	public $incrementing = true;
 
 	protected $fillable = ([

@@ -28,5 +28,6 @@
             @yield('content')
         </div>
     </div>
+    <a href="/logout">LOG OUT</a>
 </body>
 </html>

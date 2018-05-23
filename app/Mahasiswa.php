@@ -8,7 +8,7 @@ class Mahasiswa extends Model
 {
     protected $table='Mahasiswa';
     protected $primaryKey='id';
-    public $timestamp = true;
+    public $timestamps = true;
     public $incrementing = true;
 
     protected $fillable = ([
