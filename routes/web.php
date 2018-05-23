@@ -16,7 +16,7 @@ Route::group(['middleware'=>'check'],function() {
 	Route::get('/keperluansurat','KeperluanSuratController@index');
 	Route::get('/logout','MahasiswaController@logout');
 	Route::get('/formsurat','PermohonanSuratController@index');
-	Route::get('/logout','MahasiswaController@logout');
+	Route::get('/lihatpermohonan','PermohonanSuratController@show');
 });
 
 Route::group(['middleware'=>'logged'],function() {

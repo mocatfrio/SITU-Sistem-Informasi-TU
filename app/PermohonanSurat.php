@@ -18,7 +18,6 @@ class PermohonanSurat extends Model
 		'status'
 		]);
 
-
 	public function Keperluan()
 	{
 		return $this->hasMany('App\Keperluan', 'keperluan_id');

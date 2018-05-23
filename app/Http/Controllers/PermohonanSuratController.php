@@ -28,6 +28,13 @@ class PermohonanSuratController extends Controller
     	$permohonan->save();
 
     	return redirect('/logged');
+    }
+    public function show() {
+        $user = Mahasiswa::where('id',session('key'))->value('nama');
 
+        $permohonan_surat = DB::table('permohonan_surat')->join('keperluan_surat','permohonan_surat.surat_id','=','keperluan_surat.id_surat')->join('status','permohonan_surat.status_id','=','status.id_status')
+                ->where(['mhs_id'=>session('key')])->get();
+
+        return view('lihatpermohonan', compact('user', 'permohonan_surat'));
     }
 }
