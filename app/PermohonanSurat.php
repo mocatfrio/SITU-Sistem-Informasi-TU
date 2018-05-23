@@ -8,11 +8,14 @@ class PermohonanSurat extends Model
 {
 	protected $table='permohonan_surat';
 	protected $primaryKey='id';
-	public $timestamp = true;
+	public $timestamps = false;
 	public $incrementing = true;
 
 	protected $fillable = ([
-		'keperluan'
+		'tujuan',
+		'nama_per',
+		'alamat_per',
+		'status'
 		]);
 
 

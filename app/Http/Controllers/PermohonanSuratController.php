@@ -10,15 +10,24 @@ use Illuminate\Support\Facades\Input;
 
 class PermohonanSuratController extends Controller
 {
+	public function index() {
+		$user = Mahasiswa::where('id',session('key'))->value('nama');
+		return view('formsurat2', compact('user'));
+	}
     public function store(Request $request)
     {
-    	$surat = new PermohonanSurat;
+    	$permohonan = new PermohonanSurat;
 
-    	$surat->keperluan = Input::get('keperluan');
-        $surat->status = Input::get(1);
+    	$permohonan->mhs_id = session('key');
+    	$permohonan->surat_id = Input::get('keperluan');
+    	$permohonan->tujuan = Input::get('tujuan');
+    	$permohonan->nama_perusahaan = Input::get('nama_per');
+    	$permohonan->alamat_perusahaan = Input::get('alamat_per');
+    	$permohonan->status_id = Input::get('status');
 
-    	$surat->save();
+    	$permohonan->save();
 
-    	return redirect('/register');
+    	return redirect('/logged');
+
     }
 }

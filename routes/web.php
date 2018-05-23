@@ -15,11 +15,15 @@ Route::group(['middleware'=>'check'],function() {
 	Route::get('/logged','LoginController@latest');
 	Route::get('/keperluansurat','KeperluanSuratController@index');
 	Route::get('/logout','MahasiswaController@logout');
+	Route::get('/formsurat','PermohonanSuratController@index');
 });
 
 Route::group(['middleware'=>'logged'],function() {
 	Route::get('/', function () {
 	    return view('login');
+	});
+	Route::get('/login', function(){
+		return view('login');
 	});
 	Route::get('/register', function () {
 	    return view('register');
@@ -28,3 +32,4 @@ Route::group(['middleware'=>'logged'],function() {
 
 Route::post('mhsaction','MahasiswaController@store');
 Route::post('login','MahasiswaController@login');
+Route::post('permohonan','PermohonanSuratController@store');

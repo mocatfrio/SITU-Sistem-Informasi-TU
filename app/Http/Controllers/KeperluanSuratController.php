@@ -12,6 +12,6 @@ class KeperluanSuratController extends Controller
 	public function index() {
 		$user = Mahasiswa::where('id',session('key'))->value('nama');
 		$keperluan_surat = Keperluan::All();
-		return view('/keperluansuratt', compact('user','keperluan_surat'));
+		return view('keperluansuratt', compact('user','keperluan_surat'));
 	}
 }
