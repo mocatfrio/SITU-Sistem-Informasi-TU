@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2018 pada 10.52
+-- Waktu pembuatan: 24 Bulan Mei 2018 pada 18.24
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 7.2.5
 
@@ -76,7 +76,9 @@ CREATE TABLE `mahasiswa` (
 INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `alamat`, `ttl`, `no_hp`, `email`, `nama_ortu`, `pekerjaan_ortu`, `no_hp_ortu`, `alamat_ortu`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Arij Nafi\'atul Mashuda', '5115100013', 'Jalan Kejawan Putih BMA 14 Mulyorejo, Surabaya', '1997-06-21', '085334663230', 'arijnafi@gmail.com', 'Samsul Huda', 'PNS', '08563834972947', 'Jalan Mawar 12, Probolinggo', 'shaggy', NULL, '2018-05-14 22:35:49', '2018-05-14 22:35:49'),
 (3, 'Hafara Firdausi', '5115100053', 'Jalan Kejawan Putih BMA 14 Mulyorejo, Surabaya', '1998-06-21', '085334663230', 'hafara@gmail.com', 'Wasis', 'Dosen', '08563834972947', 'Jalan Mawar 12, Sidoarjo', 'shaggy', NULL, '2018-05-14 22:36:59', '2018-05-14 22:36:59'),
-(4, 'cocil', '5115100033', 'Jalan Rotowijayan, Panembahan, Jogja', '2000-03-12', '02453369723', 'cocil@gmail.com', 'asa', 'asa', '12345', 'asa', 'cocil', NULL, '2018-05-23 01:22:29', '2018-05-23 01:22:29');
+(4, 'cocil', '5115100033', 'Jalan Rotowijayan, Panembahan, Jogja', '2000-03-12', '02453369723', 'cocil@gmail.com', 'asa', 'asa', '12345', 'asa', 'cocil', NULL, '2018-05-23 01:22:29', '2018-05-23 01:22:29'),
+(6, 'Ajeng', '5115100050', 'Jalan Rotowijayan, Panembahan, Jogja', '2000-03-21', '087342756138', 'ajeng@gmail.com', 'sukam', 'pns', '0987744938', 'Jalan Mawar 12, Probolinggo', 'shaggy', NULL, '2018-05-23 02:01:46', '2018-05-23 02:01:46'),
+(7, 'Kober mie setan', '5115100022', 'Jalan Rotowijayan, Panembahan, Jogja', '2000-03-21', '2466357', 'arij_nafi@yahoo.co.id', 'Samsul Huda', 'kdhdkgh', '224463757', 'Jalan Mawar 12, Probolinggo', 'shaggy', NULL, '2018-05-23 06:42:00', '2018-05-23 06:42:00');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,13 @@ CREATE TABLE `permohonan_surat` (
 --
 
 INSERT INTO `permohonan_surat` (`id_permohonan`, `mhs_id`, `surat_id`, `tujuan`, `nama_perusahaan`, `alamat_perusahaan`, `status_id`) VALUES
-(1, 4, 2, 'sgsha', 'ada', 'ada', 1);
+(1, 4, 2, 'sgsha', 'ada', 'ada', 2),
+(2, 6, 2, 'ada aja', 'adaaaaa', 'ada pokok', 1),
+(3, 1, 3, 'sdgd', 'sags', 'fsagsa', 1),
+(4, 1, 2, 'sdhdjh', 'dhdhg', 'rthfjfgj', 1),
+(5, 1, 2, 'HRD', 'Telkom', 'jalan iya', 1),
+(6, 1, 3, 'aafadf', 'fadf', 'afaf', 1),
+(7, 1, 6, 'faf', 'daadg', 'dafda', 1);
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,8 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`id_status`, `nama_status`) VALUES
 (1, 'Belum Diproses'),
-(2, 'Sedang Diproses');
+(2, 'Sedang Diproses'),
+(3, 'Selesai Diproses');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +197,7 @@ ALTER TABLE `keperluan_surat`
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -200,13 +209,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `permohonan_surat`
 --
 ALTER TABLE `permohonan_surat`
-  MODIFY `id_permohonan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_permohonan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `status`
 --
 ALTER TABLE `status`
-  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

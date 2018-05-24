@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PermohonanSurat extends Model
 {
 	protected $table='permohonan_surat';
-	protected $primaryKey='id';
+	protected $primaryKey='id_permohonan';
 	public $timestamps = false;
 	public $incrementing = true;
 

@@ -54,6 +54,7 @@ class PermohonanSuratController extends Controller
         $nama_mhs = Mahasiswa::where('id',session('key'))->value('nama');
         $nrp = Mahasiswa::where('id',session('key'))->value('nrp');
 
+
         // memanggil dan membaca template dokumen yang telah kita buat
         $document = Storage::disk('local')->get('surat magang.rtf');
 
@@ -64,6 +65,10 @@ class PermohonanSuratController extends Controller
         $document = str_replace("#alamat_per", $alamat_per, $document);
         $document = str_replace("#nama_mhs", $nama_mhs, $document);
         $document = str_replace("#nrp", $nrp, $document);
+
+        $editstatus = PermohonanSurat::where('id_permohonan',$id)->first();
+        $editstatus->status_id = 2;
+        $editstatus->save();
 
         // header untuk membuka file output RTF dengan MS. Word
         header("Content-type: application/msword");

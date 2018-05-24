@@ -29,15 +29,19 @@
     <div class="main-content">
       <table>
         <tr>
+          <th>Nomor Surat</th>
           <th>Jenis Surat</th>
           <th>Status Surat</th>
           <th>Action</th>
+          <th></th>
         </tr>
         @foreach($permohonan_surat as $p)
           <tr>
+            <td>{{$p->id_permohonan}}</td>
             <td>{{$p->jenis_surat}}</td>
             <td>{{$p->nama_status}}</td>
             <td><a href="/print/{{$p->id_permohonan}}">Proses</a></td>
+            <td></td>
           </tr>
         @endforeach
       </table>            
