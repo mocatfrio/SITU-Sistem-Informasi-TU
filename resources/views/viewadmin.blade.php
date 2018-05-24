@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title')
-	Lihat Permohonan Surat
+	Permohonan Surat
 @endsection
 
 @section('style')
@@ -31,11 +31,13 @@
         <tr>
           <th>Jenis Surat</th>
           <th>Status Surat</th>
+          <th>Action</th>
         </tr>
         @foreach($permohonan_surat as $p)
           <tr>
             <td>{{$p->jenis_surat}}</td>
             <td>{{$p->nama_status}}</td>
+            <td><a href="/print/{{$p->id_permohonan}}">Proses</a></td>
           </tr>
         @endforeach
       </table>            

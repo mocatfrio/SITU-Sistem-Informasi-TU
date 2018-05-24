@@ -12,11 +12,13 @@
 */
 
 Route::group(['middleware'=>'check'],function() {
-	Route::get('/logged','LoginController@latest');
+	Route::get('/logged','PermohonanSuratController@show');
 	Route::get('/keperluansurat','KeperluanSuratController@index');
 	Route::get('/logout','MahasiswaController@logout');
 	Route::get('/formsurat','PermohonanSuratController@index');
 	Route::get('/lihatpermohonan','PermohonanSuratController@show');
+	Route::get('/print/{id}', 'PermohonanSuratController@print');
+	Route::get('/viewadmin', 'PermohonanSuratController@showadmin');
 });
 
 Route::group(['middleware'=>'logged'],function() {

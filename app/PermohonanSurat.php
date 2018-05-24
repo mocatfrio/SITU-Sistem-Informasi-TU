@@ -20,7 +20,7 @@ class PermohonanSurat extends Model
 
 	public function Keperluan()
 	{
-		return $this->hasMany('App\Keperluan', 'keperluan_id');
+		return $this->hasMany('App\Keperluan');
 	}
 	public function Mahasiswa()
 	{
